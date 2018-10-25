@@ -1,5 +1,5 @@
 # Notes
-This file consists of notes that aren't yet in any order.  It's got cribs so we can DRY and links to the most important information on the topic.  But it's certainly not yet in any kind of order.  
+This file consists of notes that aren't yet in any order.  It's got cribs so we can DRY and links to the most important information on the topic.   
 
 ## Sawtooth is a set of systemd services by default:
 
@@ -88,7 +88,6 @@ Here are the big difficulties I see for moving tendermint over to this design pa
 * TM transactions are not batched and there's no inbuilt processing for batched transactions.  There may not be any support whatsoever for the `sawtooth batch` type commands.  This is of course surmountable but it's significant.  
 * The tendermint light client features a native REST API, but it's incomplete and it's not going to be compatible (conceptually) with Sawtooth's native REST API. 
 * If 0mq serves anything other than consensus, then we'll need to bring 0mq into the tendermint application architecture.  
-* 
 
 
 ## Full container Loadout for sawtooth:
