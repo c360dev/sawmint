@@ -34,5 +34,6 @@ http://zeromq.org/
 ![alt text](https://github.com/c360dev/sawmint/blob/master/inaction.png)
 
 ## To Do 
-- implement staking mechanism APIs
-- once transaction format is concrete, implement transaction processor parser
+- implement staking mechanism APIs 
+- once transaction format is concrete, implement transaction processor parser (1-2 days work)
+- dynamic peering (subject to sawtooth validator modification, kyc etc.)
