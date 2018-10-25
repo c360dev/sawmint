@@ -29,3 +29,10 @@ https://sawtooth.hyperledger.org/docs/core/nightly/master/sysadmin_guide/configu
 
 messages between validators use zero mq.  The question is if any application layer comms also go over 0mq.  
 http://zeromq.org/
+
+## Running Sawmint Binary
+![alt text](http://url/to/inaction.png)
+
+## To Do 
+- implement staking mechanism APIs
+- once transaction format is concrete, implement transaction processor parser
