@@ -31,7 +31,7 @@ messages between validators use zero mq.  The question is if any application lay
 http://zeromq.org/
 
 ## Running Sawmint Binary
-![alt text](http://url/to/inaction.png)
+![alt text](https://github.com/c360dev/sawmint/blob/master/inaction.png)
 
 ## To Do 
 - implement staking mechanism APIs
