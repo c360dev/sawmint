@@ -34,6 +34,10 @@ The next step is to make the REST API or transaction processor actually do somet
 
 Once we know the two pieces of software are actually talking to one another, we can begin to improve the sawtooth features supported on sawmint.  
 
+## Running Sawmint Binary
+![alt text](https://github.com/c360dev/sawmint/blob/master/inaction.png)
 
-
-
+## To Do 
+- implement staking mechanism APIs 
+- once transaction format is concrete, implement transaction processor parser (1-2 days work)
+- dynamic peering (subject to sawtooth validator modification, kyc etc.)
