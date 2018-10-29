@@ -38,9 +38,6 @@ The next step is to make the REST API or transaction processor actually do somet
 
 Once we know the two pieces of software are actually talking to one another, we can begin to improve the sawtooth features supported on sawmint.  
 
-## Running Sawmint Binary
-![alt text](https://github.com/c360dev/sawmint/blob/master/inaction.png)
-
 ## Transaction Processor Support
 
 * Settings TP
@@ -61,3 +58,7 @@ Thus far, work towards TP support has involved making Go files out of the approp
 ## Sawtooth Application Support
 
 Sawmint supports Sawtooth applications by providing them with interfaces that are equivalent to what they'd find in Sawtooth.  
+
+![Running sawmint](https://github.com/c360dev/sawmint/blob/master/tendermint_running.png)
+
+![ABCI Client Active](https://github.com/c360dev/sawmint/blob/master/abci_active.png)
