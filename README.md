@@ -24,7 +24,7 @@ In our case, we're trying to bring the sawtooth microservices to Tendermint, and
 
 Currently, Sawmint is a Sawtooth-style REST API grafted onto a Tendermint core "node" implementation, with some example transaction processors.  While the REST API is fully featured, it is not connected to tendermint consensus yet.  For that,   
 
-![Sawtooth Diagram](https://github.com/faddat/sawmint/raw/master/sawmint.png)
+![Sawtooth Diagram](https://github.com/c360dev/sawmint/blob/master/sawmint.png)
 
 
 ## Current State:
