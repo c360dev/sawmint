@@ -16,7 +16,6 @@ import (
 	"github.com/faddat/sawmint/restapi/operations"
 	loads "github.com/go-openapi/loads"
 	flags "github.com/jessevdk/go-flags"
-
 	cmd "github.com/tendermint/tendermint/cmd/tendermint/commands"
 	cfg "github.com/tendermint/tendermint/config"
 	"github.com/tendermint/tendermint/libs/cli"
@@ -48,10 +47,16 @@ func main() {
 	//	* Provide their own DB implementation
 	// can copy this file and use something other than the
 	// DefaultNewNode function
+
 	nodeFunc := nm.DefaultNewNode
 
 	// Create & start node
 	rootCmd.AddCommand(cmd.NewRunNodeCmd(nodeFunc))
+
+	cmd := cli.PrepareBaseCmd(rootCmd, "TM", os.ExpandEnv(filepath.Join("$HOME", cfg.DefaultTendermintDir)))
+	if err := cmd.Execute(); err != nil {
+		panic(err)
+	}
 
 	// Start Sawtooth API server
 	swaggerSpec, err := loads.Embedded(restapi.SwaggerJSON, restapi.FlatSwaggerJSON)
@@ -89,10 +94,5 @@ func main() {
 
 	if err := server.Serve(); err != nil {
 		log.Fatalln(err)
-	}
-
-	cmd := cli.PrepareBaseCmd(rootCmd, "TM", os.ExpandEnv(filepath.Join("$HOME", cfg.DefaultTendermintDir)))
-	if err := cmd.Execute(); err != nil {
-		panic(err)
 	}
 }

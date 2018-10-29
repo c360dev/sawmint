@@ -12,16 +12,20 @@ Sawtooth claims to support [unpluggable consensus](https://github.com/danintel/s
 
 ## How about other efforts to do this?  What's different?
 
-Basically, the difference for us is that we're building on a consensus kit that wasn't pre-baked for Sawtooth so we're going to need to graft some things into place along our journey.  
+Basically, the difference for us is that we're building on a consensus kit that wasn't pre-baked for Sawtooth so we're going to need to graft some things into place along our journey, whereas the RAFT / PBFT implementations are already built as Sawtooth microservices.  
 
 [raft](https://github.com/hyperledger/sawtooth-raft)
 
 [pbft](https://github.com/hyperledger/sawtooth-pbft)
 
+In our case, we're trying to bring the sawtooth microservices to Tendermint, and then run a Sawtooth app on top of all that.  
 
 ## Design
 
-Currently, Sawmint is a Sawtooth-style REST API grafted onto a Tendermint core "node" implementation.  
+Currently, Sawmint is a Sawtooth-style REST API grafted onto a Tendermint core "node" implementation, with some example transaction processors.  While the REST API is fully featured, it is not connected to tendermint consensus yet.  For that,   
+
+![Sawtooth Diagram](https://github.com/faddat/sawmint/raw/master/sawmint.png)
+
 
 ## Current State:
 
@@ -37,7 +41,23 @@ Once we know the two pieces of software are actually talking to one another, we 
 ## Running Sawmint Binary
 ![alt text](https://github.com/c360dev/sawmint/blob/master/inaction.png)
 
-## To Do 
-- implement staking mechanism APIs 
+## Transaction Processor Support
+
+* Settings TP
+* Identity TP
+* PoET validator registry TP
+* Suspect that this TP will prove either difficult or impossible to implement.  
+* IntegerKey TP
+
+Thus far, work towards TP support has involved making Go files out of the appropraite .proto files.  
+
+## To do 
+- implement staking mechanism APIs
 - once transaction format is concrete, implement transaction processor parser (1-2 days work)
 - dynamic peering (subject to sawtooth validator modification, kyc etc.)
+- define application specific 
+- it's now time to connect the generated code to middleware that will translate the sawtooth calls to tendermint calls.    
+
+## Sawtooth Application Support
+
+Sawmint supports Sawtooth applications by providing them with interfaces that are equivalent to what they'd find in Sawtooth.  
