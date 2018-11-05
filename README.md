@@ -24,11 +24,11 @@ In our case, we're trying to bring the sawtooth microservices to Tendermint, and
 
 Currently, Sawmint is a Sawtooth-style REST API grafted onto a Tendermint core "node" implementation, with some example transaction processors.  While the REST API is fully featured, it is not connected to tendermint consensus yet.  For that,   
 
-![Sawtooth Diagram](https://github.com/faddat/sawmint/raw/master/sawmint.png)
+![Sawtooth Diagram](https://github.com/c360dev/sawmint/raw/master/sawmint.png)
 
 ## Current State:
 
-The Sawtooth REST API has been grafted (via swagger/openapi) onto the standard tendermint executable.   Additionally, protocol buffers files for batches and transactions were generated from .proto to Go.  
+The Sawtooth REST API has been grafted (via swagger/openapi) onto the standard tendermint executable.  Additionally, protocol buffers files for batches and transactions were generated from .proto to Go.  
 
 The next step is to make the REST API or transaction processor actually do something that makes sense to tendermint and results in some of the following:
 
@@ -47,13 +47,10 @@ Note: all of this is incomplete.  At this point it's in the Readme for tracking 
   * Suspect that this TP will prove either difficult or impossible to implement.  
 * IntegerKey TP
 
-Thus far, work towards TP support has involved making Go files out of the appropraite .proto files.  It's now time to connect the generated code to middleware that will translate the sawtooth calls to tendermint calls.  This is going to be dicey, and slow.  
-
 ## Sawtooth Application Support
 
 Sawmint supports Sawtooth applications by providing them with interfaces that are equivalent to what they'd find in Sawtooth.  
 
-The first application will be [Cookie Jar](https://github.com/danintel/sawtooth-cookiejar)
 
 
 
