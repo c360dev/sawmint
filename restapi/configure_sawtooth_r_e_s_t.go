@@ -10,7 +10,7 @@ import (
 	runtime "github.com/go-openapi/runtime"
 	middleware "github.com/go-openapi/runtime/middleware"
 
-	"github.com/faddat/sawmint/restapi/operations"
+	"github.com/c360dev/sawmint/restapi/operations"
 )
 
 //go:generate swagger generate server --target .. --name SawtoothREST --spec ../openapi.yaml

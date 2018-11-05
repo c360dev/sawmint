@@ -16,7 +16,7 @@ import (
 	swag "github.com/go-openapi/swag"
 	validate "github.com/go-openapi/validate"
 
-	models "github.com/faddat/sawmint/models"
+	models "github.com/c360dev/sawmint/models"
 )
 
 // GetBlocksHandlerFunc turns a function with the right signature into a get blocks handler

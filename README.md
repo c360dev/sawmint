@@ -8,7 +8,7 @@
 
 Sawmint is an attempt to create software that uses Tendermint consensus for Sawtooth applications.  No attempt is made to reproduce SGX functionality at this stage, instead focusing solely on replacing the default PoET consensus with Tendermint Consensus.  
 
-Sawtooth claims to support [unpluggable consensus](https://github.com/danintel/sawtooth-faq/blob/master/consensus.rst).  Sawmint is an attempt at plugging Tendermint into Sawtooth.  
+Sawtooth supports [unpluggable consensus](https://github.com/danintel/sawtooth-faq/blob/master/consensus.rst).  Sawmint is an attempt at providing a way to plug Sawtooth apps into Tendermint.  
 
 ## How about other efforts to do this?  What's different?
 
@@ -24,8 +24,7 @@ In our case, we're trying to bring the sawtooth microservices to Tendermint, and
 
 Currently, Sawmint is a Sawtooth-style REST API grafted onto a Tendermint core "node" implementation, with some example transaction processors.  While the REST API is fully featured, it is not connected to tendermint consensus yet.  For that,   
 
-![Sawtooth Diagram](https://github.com/c360dev/sawmint/blob/master/sawmint.png)
-
+![Sawtooth Diagram](https://github.com/faddat/sawmint/raw/master/sawmint.png)
 
 ## Current State:
 
@@ -40,25 +39,21 @@ Once we know the two pieces of software are actually talking to one another, we 
 
 ## Transaction Processor Support
 
+Note: all of this is incomplete.  At this point it's in the Readme for tracking purposes.  
+
 * Settings TP
 * Identity TP
 * PoET validator registry TP
-* Suspect that this TP will prove either difficult or impossible to implement.  
+  * Suspect that this TP will prove either difficult or impossible to implement.  
 * IntegerKey TP
 
-Thus far, work towards TP support has involved making Go files out of the appropraite .proto files.  
-
-## To do 
-- implement staking mechanism APIs
-- once transaction format is concrete, implement transaction processor parser (1-2 days work)
-- dynamic peering (subject to sawtooth validator modification, kyc etc.)
-- define application specific 
-- it's now time to connect the generated code to middleware that will translate the sawtooth calls to tendermint calls.    
+Thus far, work towards TP support has involved making Go files out of the appropraite .proto files.  It's now time to connect the generated code to middleware that will translate the sawtooth calls to tendermint calls.  This is going to be dicey, and slow.  
 
 ## Sawtooth Application Support
 
 Sawmint supports Sawtooth applications by providing them with interfaces that are equivalent to what they'd find in Sawtooth.  
 
-![Running sawmint](https://github.com/c360dev/sawmint/blob/master/tendermint_running.png)
+The first application will be [Cookie Jar](https://github.com/danintel/sawtooth-cookiejar)
 
-![ABCI Client Active](https://github.com/c360dev/sawmint/blob/master/abci_active.png)
+
+
