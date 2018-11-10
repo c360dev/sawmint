@@ -10,7 +10,7 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	models "github.com/faddat/sawmint/models"
+	models "github.com/c360dev/sawmint/models"
 )
 
 // GetBlocksBlockIDOKCode is the HTTP code returned for type GetBlocksBlockIDOK

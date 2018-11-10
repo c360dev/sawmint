@@ -13,7 +13,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/runtime/middleware"
 
-	models "github.com/faddat/sawmint/models"
+	models "github.com/c360dev/sawmint/models"
 )
 
 // NewPostBatchesParams creates a new PostBatchesParams object
